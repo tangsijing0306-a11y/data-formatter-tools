@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>數據格式處理工具 + 時區對比</title>
+    <meta
+      name="description"
+      content="數據格式轉換、追加字母 T、金蝶庫存報錯解析與實時時區對比。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>數據格式處理工具 + 時區對比</h1>
+      </div>
+    </header>
+
+    <main class="container page">
+      <section class="section">
+        <h2>金蝶庫存不足報錯數據解析 • 提取 SKU 和數量</h2>
+        <textarea
+          id="inventory-input"
+          class="input"
+          placeholder="粘貼金蝶庫存報錯信息，例如：QTCK-260430-104117，第16行分錄，可用庫存不足：物料：HHL260100079（20952289），可用基本數量短缺：1。"
+        ></textarea>
+        <div class="single-output" id="inventory-results"></div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="section">
+        <h2>數據格式轉換 • 一次輸出四種格式</h2>
+        <textarea
+          id="format-input"
+          class="input"
+          placeholder="輸入數據，支持任何分隔符（逗號、空格、換行等）"
+        ></textarea>
+        <div class="grid-outputs" id="format-results"></div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="section">
+        <h2>數據末尾追加字母T • 一次輸出四種格式</h2>
+        <textarea
+          id="suffix-input"
+          class="input"
+          placeholder="輸入數據，支持任何分隔符（逗號、空格、換行等）"
+        ></textarea>
+        <div class="grid-outputs" id="suffix-results"></div>
+      </section>
+
+      <section class="section section-time">
+        <h2>實時時區對比</h2>
+        <div class="grid-clocks" id="clock-grid"></div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="section">
+        <h2>時區對照表 • 以北京時間 2026 年 3 月 1 日 0 點為基準</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>北京時間</th>
+                <th>UTC</th>
+                <th>PST</th>
+                <th>美西-洛杉磯</th>
+                <th>美東-紐約</th>
+              </tr>
+            </thead>
+            <tbody id="timezone-table"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>數據格式處理工具 + 時區對比 • 快速、簡單、易用</p>
+      </div>
+    </footer>
+
+    <template id="output-card-template">
+      <article class="output-card">
+        <div class="output-top">
+          <div class="output-title">
+            <span class="output-icon"></span>
+            <h3></h3>
+          </div>
+        </div>
+        <pre></pre>
+        <button type="button" class="copy-btn">複製</button>
+      </article>
+    </template>
+
+    <template id="clock-card-template">
+      <article class="clock-card">
+        <div class="clock-head">
+          <h3></h3>
+          <p></p>
+        </div>
+        <div class="clock-time"></div>
+        <div class="clock-date"></div>
+        <div class="clock-weekday"></div>
+      </article>
+    </template>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

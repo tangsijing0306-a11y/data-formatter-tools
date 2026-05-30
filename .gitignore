@@ -1,0 +1,6 @@
+.DS_Store
+.xdg-config/
+.xdg-cache/
+.pnpm-store/
+.pnpm-home/
+node_modules/
