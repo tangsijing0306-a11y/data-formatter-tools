@@ -112,6 +112,10 @@ textarea {
   gap: 12px;
 }
 
+.grid-outputs .output-card {
+  height: 168px;
+}
+
 .single-output {
   display: grid;
   grid-template-columns: 1fr;
@@ -155,6 +159,8 @@ textarea {
   flex: 1;
   margin: 8px 0 10px;
   padding: 10px;
+  min-height: 0;
+  overflow: auto;
   border: 1px solid rgba(230, 225, 240, 0.9);
   border-radius: 10px;
   background: rgba(248, 246, 255, 0.7);
