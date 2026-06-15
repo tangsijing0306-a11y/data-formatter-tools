@@ -116,6 +116,10 @@ textarea {
   height: 168px;
 }
 
+.single-output .output-card {
+  height: 168px;
+}
+
 .single-output {
   display: grid;
   grid-template-columns: 1fr;
